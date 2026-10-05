@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "Pengpeng",
+    "slug": "smart-expense-tracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+
+    "icon": "./assets/branding/pengpeng-app-icon.png",
+
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+
+    "splash": {
+      "image": "./assets/branding/pengpeng-avatar.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#03142F"
+    },
+
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.charleslat.smartexpensetracker"
+    },
+
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/branding/pengpeng-app-icon.png",
+        "backgroundColor": "#03142F"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.charleslat.smartexpensetracker"
+    },
+
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+
+    "extra": {},
+
+    "description": "Pengpeng — The Smart AI Expense Tracker for personalized budgeting, wallets, bills, goals, reports, and spending insights.",
+
+    "scheme": "smartexpensetracker"
+  }
+}
