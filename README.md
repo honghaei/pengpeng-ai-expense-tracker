@@ -1,58 +1,55 @@
-# Pengpeng — The Smart AI Expense Tracker
+<p align="center">
+  <img src="assets/branding/pengpeng-app-icon.png" alt="Pengpeng app icon" width="150" />
+</p>
 
-Pengpeng is a local-first personal finance app built with React Native and Expo. It combines cash and wallet tracking, category budgets, bills and subscriptions, payday income, Auto Split, savings goals, PDF reports, notifications, and personalized financial insights in one mobile experience.
+<h1 align="center">Pengpeng — The Smart AI Expense Tracker</h1>
 
-The app is designed around a friendly penguin assistant named **Pengpeng**. The assistant uses the financial information saved in the app to provide local summaries and spending-pattern insights. An optional secure server-side AI proxy is included for future open-ended generative responses; it is not required for the core app.
+<p align="center">
+  A personalized, local-first finance companion built with React Native and Expo.
+</p>
 
-## Highlights
+<p align="center">
+  Track money • Organize wallets • Manage bills • Build savings goals • Understand spending patterns
+</p>
 
-- **Branded first-run experience** — Pengpeng splash → guided App Tour → financial Profile Onboarding → Home
-- **Personalized dashboard** — Total Balance, monthly spending, Today spending, wallet budget progress, calendar, and recent transactions
-- **Wallet management** — custom wallets, deposits, withdrawals, transfers, monthly caps, transaction history, and wallet-level expenses
-- **Auto Split** — distribute payday income across wallets using percentage allocations
-- **Bills & subscriptions** — due dates, payment source, payment history, Autopay/Pause controls, filters, and reminders
-- **Savings goals** — target amounts, contribution plans, progress tracking, and dedicated goal balances
-- **Pengpeng AI / Local Insights** — financial snapshot, quick questions, transaction-aware retrieval, RAG-style context, and spending-pattern analysis
-- **Reports** — monthly financial report generation with PDF export and sharing
-- **Notifications** — bill, payday, and budget-related reminders
-- **Local-first storage** — financial data is persisted on-device with AsyncStorage
+---
 
-## Current AI behavior
+## About Pengpeng
 
-Pengpeng currently works in **Local Insights** mode by default. It can retrieve and analyze saved app data including:
+**Pengpeng** is a mobile personal-finance application designed to do more than record expenses. It brings balances, wallets, bills, subscriptions, payday income, savings goals, reports, and personalized financial insights into one connected experience.
 
-- balances and wallets
-- wallet expense history
-- monthly caps and budgets
-- bills, subscriptions, and payment history
-- recurring/payday income
-- Auto Split configuration
-- savings goals and contribution schedules
-- transaction/ledger history
-- user-stated spending preferences
-- derived spending patterns such as category totals and budget risk
+The app is centered around **Pengpeng**, a friendly penguin assistant that helps make financial information easier to understand. The current build runs in **Local Insights** mode: Pengpeng analyzes financial data stored on the device and uses retrieval, calculations, and spending-pattern logic to answer supported questions without requiring a cloud AI service.
 
-The quick-question buttons are examples, not a separate data source. Local responses are calculated from the user's saved financial context.
+## App preview
 
-For unrestricted generative answers, the repository also contains an **optional** secure backend integration. See [`OPTIONAL_AI_BACKEND.md`](./OPTIONAL_AI_BACKEND.md).
+<table>
+  <tr>
+    <td align="center"><strong>Overview</strong></td>
+    <td align="center"><strong>Pengpeng AI</strong></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/02-overview.png" alt="Pengpeng overview screen" width="330" /></td>
+    <td><img src="docs/screenshots/05-pengpeng-ai.png" alt="Pengpeng AI screen" width="330" /></td>
+  </tr>
+</table>
 
-## Tech stack
+> These are real device screenshots from the working Expo build. Additional screenshots for Wallets, Bills, Profile/Goals, and App Tour can be added to `docs/screenshots/`.
 
-- React Native
-- Expo SDK 57
-- JavaScript
-- React Navigation
-- AsyncStorage
-- React Native SVG
-- React Native Calendars
-- Expo Notifications
-- Expo Print
-- Expo Sharing
-- Expo Image Picker
-- Local retrieval / RAG-style financial context
-- Optional Cohere integration through a server-side proxy
+## Core features
 
-## First-launch flow
+| Area | What Pengpeng does |
+| --- | --- |
+| **Overview** | Shows Total Balance, monthly spending, Today spending, category budget progress, calendar activity, and recent transactions. |
+| **Wallets** | Create custom wallets, deposit, withdraw, transfer funds, set monthly caps, review history, and add wallet-level expenses. |
+| **Auto Split** | Distribute payday income across wallets using percentage-based allocations. |
+| **Bills & Subscriptions** | Track due dates, payment sources, payment history, Autopay/Pause settings, filters, and reminders. |
+| **Savings Goals** | Create goals, define targets and timelines, confirm contributions, and monitor progress. |
+| **Pengpeng AI** | Reads saved financial context to provide local summaries, quick answers, spending-pattern insights, and budget-risk observations. |
+| **Reports** | Generate monthly financial reports with PDF export and sharing. |
+| **Notifications** | Support reminders related to bills, payday income, and budget activity. |
+| **Onboarding & Tour** | First install follows Splash → App Tour → Profile Onboarding → Home. Later opens go Splash → Home. |
+
+## First-launch experience
 
 ```text
 Fresh install
@@ -68,7 +65,7 @@ Profile Onboarding
 Home
 ```
 
-After onboarding is complete:
+After the initial setup:
 
 ```text
 Reopen app
@@ -80,43 +77,108 @@ Tap to continue
 Home
 ```
 
-The App Tour can still be reopened manually from Profile.
+The App Tour remains available from Profile for users who want to revisit the walkthrough.
+
+## Pengpeng Local Insights
+
+Pengpeng can use financial data already saved in the application, including:
+
+- Total Balance and wallet balances
+- wallet expense history
+- monthly wallet caps and budget usage
+- bills, subscriptions, and payment history
+- upcoming due dates
+- payday / recurring income settings
+- Auto Split percentages
+- savings goals and contribution schedules
+- transaction and ledger history
+- user-stated spending preferences
+- derived spending patterns and budget risk
+
+The quick-question buttons are examples, not hard-coded data sources. The app rebuilds the relevant financial context from local storage when generating supported insights.
+
+### Optional generative AI
+
+The current portfolio build does **not require a remote AI backend**. A secure server-side integration can be added later for unrestricted open-ended generative responses.
+
+See [`OPTIONAL_AI_BACKEND.md`](./OPTIONAL_AI_BACKEND.md) for the intended architecture and security requirements.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[User financial activity] --> B[AsyncStorage]
+    B --> C[Wallet / Bill / Goal / Income modules]
+    B --> D[Financial context + retrieval]
+    C --> E[Dashboard & reports]
+    D --> F[Pengpeng Local Insights]
+    F --> G[Personalized answers]
+```
+
+## Tech stack
+
+- **React Native**
+- **Expo SDK 57**
+- **JavaScript**
+- **React Navigation**
+- **AsyncStorage**
+- **React Native SVG**
+- **React Native Calendars**
+- **Expo Notifications**
+- **Expo Print**
+- **Expo Sharing**
+- **Expo Image Picker**
+- Local retrieval / RAG-style financial context
+- Data analytics and spending-pattern logic
 
 ## Project structure
 
 ```text
-App.js                         Navigation and first-run routing
-assets/branding/               Pengpeng splash, avatar, and app icon
-src/components/                Reusable UI components
-src/screens/                   Main application screens
-src/theme/design.js            Shared visual tokens and navigation theme
-src/utils/                     Storage, budgets, goals, bills, income, reports, RAG, and analytics
-src/services/aiClient.js       Optional secure remote-AI client
-backend/netlify/               Optional serverless AI proxy
-docs/screenshots/              Final portfolio screenshots
+Pengpeng/
+├── App.js
+├── app.json
+├── assets/
+│   └── branding/
+│       ├── pengpeng-app-icon.png
+│       ├── pengpeng-avatar.png
+│       └── pengpeng-splash.png
+├── docs/
+│   └── screenshots/
+├── src/
+│   ├── components/
+│   ├── constants/
+│   ├── screens/
+│   ├── services/
+│   ├── theme/
+│   └── utils/
+├── .env.example
+├── package.json
+└── README.md
 ```
 
 ## Run locally
 
 ### Requirements
 
-- Node.js 22+ recommended
+- Node.js 22+
 - npm
-- Expo Go or an Android/iOS development environment
+- Expo Go, Android emulator, or iOS simulator/device
 
-### Install
+### Installation
 
 ```bash
+git clone https://github.com/honghaei/pengpeng-ai-expense-tracker.git
+cd pengpeng-ai-expense-tracker
 npm install
 ```
 
-### Start
+### Start the project
 
 ```bash
 npx expo start -c
 ```
 
-Scan the QR code with Expo Go or launch a simulator/emulator.
+Then scan the QR code with Expo Go or launch an emulator/simulator.
 
 ## Useful commands
 
@@ -129,14 +191,41 @@ npm run doctor
 npm run export:android
 ```
 
-## Data & privacy
+## Data and privacy
 
-The core app stores financial data locally with AsyncStorage. No provider API key is embedded in the client. If the optional remote AI integration is enabled, only the public backend URL belongs in the Expo environment; the provider key remains on the server.
+The core application stores financial data locally with **AsyncStorage**.
 
-## Portfolio screenshots
+- no provider API key is embedded in the mobile client
+- local financial features do not require a cloud AI service
+- `.env` is excluded from Git
+- any future remote AI provider key should remain server-side
 
-A screenshot checklist is included in [`docs/screenshots/README.md`](./docs/screenshots/README.md). Use actual device screenshots from the finished app for the GitHub repository and portfolio case study.
+## Development status
 
-## Status
+**Portfolio-ready / actively refinable**
 
-Portfolio-ready mobile application. Core flows have been manually tested in Expo Go, including first-run navigation, wallet transactions, bill/subscription actions, Pengpeng input, Today spending updates, profile/goals, and local data persistence.
+The following flows have been manually tested in Expo Go:
+
+- branded splash and Tap to Continue
+- first-run App Tour and Profile Onboarding
+- persistent user profile
+- Today spending updates
+- wallet creation and wallet transactions
+- deposit, withdrawal, and wallet transfer
+- bills and subscription payments
+- Pengpeng quick questions and free-text input
+- savings goals and reports
+- local data persistence after app restart
+
+## Planned refinements
+
+- add final clean-device screenshots for all major screens
+- package a standalone development/preview build
+- optionally connect a secure generative-AI backend
+- continue refining spending-pattern recommendations
+
+---
+
+<p align="center">
+  Built as a React Native personal-finance portfolio project.
+</p>

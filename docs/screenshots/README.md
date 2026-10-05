@@ -1,15 +1,16 @@
-# Screenshots
+# Pengpeng Screenshots
 
-Add final device screenshots here before publishing the portfolio case study.
+Current real-device screenshots:
 
-Recommended files:
+- `02-overview.png`
+- `05-pengpeng-ai.png`
+
+Recommended additions for the complete GitHub / portfolio gallery:
 
 - `01-splash.png`
-- `02-overview.png`
 - `03-wallets.png`
 - `04-bills.png`
-- `05-pengpeng-ai.png`
 - `06-profile-goals.png`
 - `07-app-tour.png`
 
-Use real app screenshots only; do not use generated UI mockups as product evidence.
+Use real screenshots from the finished app. For the cleanest portfolio presentation, capture them from an installed development/preview build so Expo Go controls are not visible.
