@@ -1,16 +1,14 @@
 # Pengpeng Screenshots
 
-Current real-device screenshots:
+Real-device screenshots included:
 
-- `02-overview.png`
-- `05-pengpeng-ai.png`
+- `01-splash.png` — branded Tap to Continue splash
+- `02-overview.png` — financial overview dashboard
+- `03-wallets.png` — wallet balances, caps, and transfers
+- `04-bills.png` — bills and subscriptions
+- `05-pengpeng-ai.png` — Pengpeng Local Insights
+- `06-profile-goals.png` — profile and savings goals
+- `07-app-tour.png` — interactive guided tour
+- `08-profile-onboarding.png` — first-run financial profile setup
 
-Recommended additions for the complete GitHub / portfolio gallery:
-
-- `01-splash.png`
-- `03-wallets.png`
-- `04-bills.png`
-- `06-profile-goals.png`
-- `07-app-tour.png`
-
-Use real screenshots from the finished app. For the cleanest portfolio presentation, capture them from an installed development/preview build so Expo Go controls are not visible.
+Note: the blue Expo Go gear overlay and the iOS “Camera” back label are development/runtime overlays, not Pengpeng UI.

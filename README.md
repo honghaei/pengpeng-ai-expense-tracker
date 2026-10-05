@@ -22,18 +22,36 @@ The app is centered around **Pengpeng**, a friendly penguin assistant that helps
 
 ## App preview
 
+These screenshots were captured from the working Expo build.
+
 <table>
   <tr>
+    <td align="center"><strong>Splash</strong></td>
     <td align="center"><strong>Overview</strong></td>
-    <td align="center"><strong>Pengpeng AI</strong></td>
+    <td align="center"><strong>Wallets</strong></td>
+    <td align="center"><strong>Bills</strong></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/02-overview.png" alt="Pengpeng overview screen" width="330" /></td>
-    <td><img src="docs/screenshots/05-pengpeng-ai.png" alt="Pengpeng AI screen" width="330" /></td>
+    <td><img src="docs/screenshots/01-splash.png" alt="Pengpeng splash screen" width="220" /></td>
+    <td><img src="docs/screenshots/02-overview.png" alt="Pengpeng overview screen" width="220" /></td>
+    <td><img src="docs/screenshots/03-wallets.png" alt="Pengpeng wallets screen" width="220" /></td>
+    <td><img src="docs/screenshots/04-bills.png" alt="Pengpeng bills screen" width="220" /></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Pengpeng AI</strong></td>
+    <td align="center"><strong>Profile & Goals</strong></td>
+    <td align="center"><strong>App Tour</strong></td>
+    <td align="center"><strong>Profile Onboarding</strong></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/05-pengpeng-ai.png" alt="Pengpeng AI screen" width="220" /></td>
+    <td><img src="docs/screenshots/06-profile-goals.png" alt="Pengpeng profile and savings goals screen" width="220" /></td>
+    <td><img src="docs/screenshots/07-app-tour.png" alt="Pengpeng interactive app tour" width="220" /></td>
+    <td><img src="docs/screenshots/08-profile-onboarding.png" alt="Pengpeng financial profile onboarding" width="220" /></td>
   </tr>
 </table>
 
-> These are real device screenshots from the working Expo build. Additional screenshots for Wallets, Bills, Profile/Goals, and App Tour can be added to `docs/screenshots/`.
+> The blue gear button and the “Camera” back label visible in these captures come from Expo Go / the iPhone launch flow and are not part of the Pengpeng production UI. A standalone build can be used later for cleaner portfolio screenshots.
 
 ## Core features
 
